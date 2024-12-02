@@ -1,0 +1,13 @@
+{
+  "name": "virtual-cam-injector",
+  "version": "1.0.0",
+  "description": "Chrome extension that adds a virtual camera to the list of media devices",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp manifest.json background.js content.js dist/ && cp -r icons dist/",
+    "package": "cd dist && zip -r ../virtual-cam-injector.zip ."
+  },
+  "author": "",
+  "license": "MIT",
+  "main": "index.js"
+}

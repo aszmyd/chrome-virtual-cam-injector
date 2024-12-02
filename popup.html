@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Camera Manager</title>
+    <style>
+      body {
+        width: 600px;
+        padding: 16px;
+        font-family: Arial, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        height: 60px;
+        vertical-align: middle;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      .camera-image {
+        max-width: 100px;
+        max-height: 60px;
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+      }
+      #addCameraForm {
+        margin-bottom: 16px;
+        padding: 16px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .form-group {
+        margin-bottom: 0;
+        flex: 1;
+      }
+      label {
+        display: block;
+        margin-bottom: 4px;
+      }
+      button[type="submit"] {
+        align-self: flex-end;
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Camera Manager</h2>
+
+    <form id="addCameraForm">
+      <div class="form-group">
+        <label for="cameraName">Camera Name:</label>
+        <input type="text" id="cameraName" required />
+      </div>
+      <div class="form-group">
+        <label for="cameraImage">Camera Image:</label>
+        <input type="file" id="cameraImage" accept="image/*" required />
+      </div>
+      <button type="submit">Add Camera</button>
+    </form>
+
+    <table id="camerasTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="camerasTableBody"></tbody>
+    </table>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
